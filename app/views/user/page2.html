@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Tell us something in confidence - Prototype
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+    <a class="govuk-header__link" href="/">
+        Home
+    </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+            <a href="/user/page1" class="govuk-back-link">Back</a>
+      <h1 class="govuk-heading-l">
+          Where is this happening?
+      </h1>
+      <p class="govuk-body">Give us as much information about the location of this activity. For example: </p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>premises address</li>
+          <li>description of location</li>
+          <li>website address</li>          
+          <li>social media group or page</li>
+        </ul>
+        <form action="" method="POST">
+            
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="location">
+                  Details
+                </label>
+                <span id="location-hint" class="govuk-hint">
+                    Just tell us where this is happening. You can provide specific details of the activity in the next step.
+                </span>
+                <textarea class="govuk-textarea" id="location" name="location" rows="5" aria-describedby="location-hint">{{data['location']}}</textarea>
+              </div>
+
+              <div class="govuk-form-group">
+                  <a href="/user/page3" class="govuk-button">
+                    Save and continue
+                  </a></div>
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Tell us something in confidence - Prototype
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+    <a class="govuk-header__link" href="/">
+        Home
+    </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+            <a href="/user/page3" class="govuk-back-link">Back</a>
+      <h1 class="govuk-heading-l">
+          Question
+      </h1>
+      <p class="govuk-body">Body text</p>
+     
+        <form action="" method="POST">
+            
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="details">
+                  Label
+                </label>
+                <span id="details-hint" class="govuk-hint">
+                   Hint
+                </span>
+                <textarea class="govuk-textarea" id="details" name="details" rows="5" aria-describedby="details-hint">{{data['details']}}</textarea>
+              </div>
+              <div class="govuk-form-group">
+              <a href="/user/check" class="govuk-button">
+                Save and continue
+              </a></div>
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}
