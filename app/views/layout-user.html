@@ -60,7 +60,7 @@ Tell us something in confidence - Prototype
       <button class="govuk-header__menu-button js-header-toggle" role="button" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
       <nav>
         <ul class="govuk-header__navigation " id="navigation" aria-label="Top Level Navigation">{% block links %}
-           {% endblock %}</ul>
+          {% endblock %}</ul>
       </nav>
 
 
@@ -72,20 +72,28 @@ Tell us something in confidence - Prototype
 
 {% if useAutoStoreData %}
 {% block footer %}
-{{ govukFooter({
-meta: {
-items: [
-{
-href: "https://govuk-prototype-kit.herokuapp.com/",
-text: "GOV.UK Prototype Kit " + releaseVersion
-},
-{
-href: "/prototype-admin/clears-data",
-text: "Clear data"
-}
-]
-}
-}) }}
+<div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <h2 class="govuk-visually-hidden">Support links</h2>
+        <div class="footer-meta-inner">
+            <ul class="govuk-footer__inline-list">
+
+                <li class="govuk-footer__inline-list-item">
+                    <a class="govuk-footer__link" href="/http://www.gamblingcommission.gov.uk/Footer/Privacy-and-cookies.aspx" target="_Blank">Privacy Policy</a>
+                </li>
+                <li class="govuk-footer__inline-list-item">
+                    <a class="govuk-footer__link" href="#">Feedback</a>
+                </li>
+            </ul>
+        </div>
+        <div class="govuk-footer__meta-item">
+            <div style="position: relative; top: -10px;">
+                <a class="govuk-footer__link" href="#"><img style="width: 200px; right: 0px; position: absolute" src="https://pfl-ukgc.azurewebsites.net/assets/images/logo.png"></a>
+            </div>
+
+        </div>
+    </div>
+</div>
 {% endblock %}
 {% endif %}
 
