@@ -1,7 +1,7 @@
 {% extends "layoutuser.html" %}
 
 {% block pageTitle %}
-Tell us something in confidence - Prototype
+Where is this happening? - Prototype
 {% endblock %}
 
 {% block links %}
@@ -36,8 +36,11 @@ Tell us something in confidence - Prototype
                 <span id="location-hint" class="govuk-hint">
                     Just tell us where this is happening. You can provide specific details of the activity in the next step.
                 </span>
+
                 <textarea class="govuk-textarea" id="location" name="location" rows="5" aria-describedby="location-hint">{{data['location']}}</textarea>
               </div>
+
+             
 
               <div class="govuk-form-group">
                   <a href="/user/page3" class="govuk-button">

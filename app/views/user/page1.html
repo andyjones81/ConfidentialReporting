@@ -1,72 +1,78 @@
 {% extends "layoutuser.html" %}
 
 {% block pageTitle %}
-Tell us something in confidence - Prototype
+What does this relate to? - Tell us something in confidence
 {% endblock %}
 
 {% block links %}
 <li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-    <a class="govuk-header__link" href="/">
-        Home
-    </a>
+  <a class="govuk-header__link" href="/">
+    Home
+  </a>
 </li>
 
 {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-            <a href="/user/" class="govuk-back-link">Back</a>
-      <h1 class="govuk-heading-l">
-          Tell us what this relates to
-      </h1>
+  <div class="govuk-grid-column-two-thirds">
+    <a href="/user/" class="govuk-back-link">Back</a>
+    <h1 class="govuk-heading-l">
+      Tell us what this relates to
+    </h1>
 
-        <form action="" method="POST">
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                 
-                  <div class="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="what-1" name="what" type="radio" value="Betting shops">
-                      <label class="govuk-label govuk-radios__label" for="what-1">
-                        Betting shops
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="what-2" name="what" type="radio" value="Bingo halls">
-                      <label class="govuk-label govuk-radios__label" for="what-2">
-                        Bingo halls
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="what-3" name="what" type="radio" value="Lotteries">
-                      <label class="govuk-label govuk-radios__label" for="what-3">
-                        Lotteries
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="what-4" name="what" type="radio" value="Pubs and clubs">
-                      <label class="govuk-label govuk-radios__label" for="what-4">
-                        Pubs and clubs
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="what-5" name="what" type="radio" value="Social media">
-                        <label class="govuk-label govuk-radios__label" for="what-5">
-                          Social media
-                        </label>
-                      </div>
-                  </div>
-                </fieldset>
-              </div>
-              <div class="govuk-form-group">
-                    <a href="/user/page2" class="govuk-button">
-                      Save and continue
-                    </a></div>
-        </form>
+    <form action="" method="POST">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-1" name="what" type="radio" value="Betting shops">
+              <label class="govuk-label govuk-radios__label" for="what-1">
+                Betting
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-2" name="what" type="radio" value="Bingo halls">
+              <label class="govuk-label govuk-radios__label" for="what-2">
+                Bingo
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-3" name="what" type="radio" value="Casino">
+              <label class="govuk-label govuk-radios__label" for="what-3">
+                Casinos
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-4" name="what" type="radio" value="Machines">
+              <label class="govuk-label govuk-radios__label" for="what-4">
+                Gaming machines
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-5" name="what" type="radio" value="Lotteries">
+              <label class="govuk-label govuk-radios__label" for="what-5">
+                Lotteries
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-6" name="what" type="radio" value="Poker">
+              <label class="govuk-label govuk-radios__label" for="what-6">
+                Poker
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-form-group">
+        <a href="/user/page2" class="govuk-button">
+          Save and continue
+        </a></div>
+    </form>
 
 
-    </div>
+  </div>
 </div>
 
 {% endblock %}
