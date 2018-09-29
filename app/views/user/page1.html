@@ -1,14 +1,14 @@
 {% extends "layoutuser.html" %}
 
 {% block pageTitle %}
-What does this relate to? - Tell us something in confidence
+What area of gambling does this report relate to - Tell us something in confidence
 {% endblock %}
 
 {% block links %}
-<li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-  <a class="govuk-header__link" href="/">
-    Home
-  </a>
+<li class="govuk-header__navigation-item">
+    <a class="govuk-header__link" href="/">
+        Home
+    </a>
 </li>
 
 {% endblock %}
@@ -17,58 +17,74 @@ What does this relate to? - Tell us something in confidence
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <a href="/user/" class="govuk-back-link">Back</a>
+
+    <span class="govuk-caption-l">Step 1 of 7</span>
     <h1 class="govuk-heading-l">
-      Tell us what this relates to
+      What area of gambling does this report relate to?
     </h1>
 
-    <form action="" method="POST">
+    <form  method="POST">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
 
-          <div class="govuk-radios">
+          <div class="govuk-radios govuk-radios--conditional" data-module="radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="what-1" name="what" type="radio" value="Betting shops">
+              <input class="govuk-radios__input" id="what-1" name="what" type="radio" value="Betting shops" {{ checked('what','Betting shops') }}>
               <label class="govuk-label govuk-radios__label" for="what-1">
                 Betting
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="what-2" name="what" type="radio" value="Bingo halls">
+              <input class="govuk-radios__input" id="what-2" name="what" type="radio" value="Bingo halls"{{ checked('what','Bingo halls') }}>
               <label class="govuk-label govuk-radios__label" for="what-2">
                 Bingo
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="what-3" name="what" type="radio" value="Casino">
+              <input class="govuk-radios__input" id="what-3" name="what" type="radio" value="Casino"{{ checked('what','Casino') }}>
               <label class="govuk-label govuk-radios__label" for="what-3">
                 Casinos
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="what-4" name="what" type="radio" value="Machines">
+              <input class="govuk-radios__input" id="what-4" name="what" type="radio" value="Machines"{{ checked('what','Machines') }}>
               <label class="govuk-label govuk-radios__label" for="what-4">
                 Gaming machines
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="what-5" name="what" type="radio" value="Lotteries">
+              <input class="govuk-radios__input" id="what-5" name="what" type="radio" value="Lotteries"{{ checked('what','Lotteries') }}>
               <label class="govuk-label govuk-radios__label" for="what-5">
                 Lotteries
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="what-6" name="what" type="radio" value="Poker">
+              <input class="govuk-radios__input" id="what-6" name="what" type="radio" value="Poker"{{ checked('what','Poker') }}>
               <label class="govuk-label govuk-radios__label" for="what-6">
                 Poker
               </label>
+            </div> <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="what-7" name="what" type="radio" value="Other" data-aria-controls="conditional-what-7" {{ checked('what','Other') }}>
+            <label class="govuk-label govuk-radios__label" for="what-7">
+              Other
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-what-7">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-text">
+                Other area of gambling
+              </label>
+              <input class="govuk-input" id="contact-by-text" name="otherarea" type="text" value="{{data['otherarea']}}">
             </div>
           </div>
+          </div>
+         
         </fieldset>
       </div>
       <div class="govuk-form-group">
-        <a href="/user/page2" class="govuk-button">
-          Save and continue
-        </a></div>
+          <button type="submit" class="govuk-button">
+              Save and continue
+          </button></div>
     </form>
 
 

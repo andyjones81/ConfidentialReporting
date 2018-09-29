@@ -1,51 +1,117 @@
 {% extends "layoutuser.html" %}
 
 {% block pageTitle %}
-Where is this happening? - Prototype
+What do you want to report - Tell us something in confidence
 {% endblock %}
 
 {% block links %}
-<li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-    <a class="govuk-header__link" href="/">
-        Home
-    </a>
-</li>
+<li class="govuk-header__navigation-item">
+        <a class="govuk-header__link" href="/">
+            Home
+        </a>
+    </li>
 
 {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-            <a href="/user/page1" class="govuk-back-link">Back</a>
-      <h1 class="govuk-heading-l">
-          Where is this happening?
-      </h1>
-      <p class="govuk-body">Give us as much information about the location of this activity. For example: </p>
-      <ul class="govuk-list govuk-list--bullet">
-          <li>premises address</li>
-          <li>description of location</li>
-          <li>website address</li>          
-          <li>social media group or page</li>
-        </ul>
-        <form action="" method="POST">
-            
+        <a href="/user/page1" class="govuk-back-link">Back</a>
+
+        <span class="govuk-caption-l">Step 2 of 7</span>
+        <h1 class="govuk-heading-l">
+            What do you want to report
+        </h1>
+        <p class="govuk-body">Full details of the location and activity can be provided in the following steps.</p>
+        <form method="POST">
             <div class="govuk-form-group">
-                <label class="govuk-label" for="location">
-                  Details
-                </label>
-                <span id="location-hint" class="govuk-hint">
-                    Just tell us where this is happening. You can provide specific details of the activity in the next step.
-                </span>
+                <fieldset class="govuk-fieldset">
 
-                <textarea class="govuk-textarea" id="location" name="location" rows="5" aria-describedby="location-hint">{{data['location']}}</textarea>
-              </div>
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="type-1" name="type" type="radio" value="Cheating"{{ checked('type','Cheating') }}>
+                            <label class="govuk-label govuk-radios__label" for="type-1">
+                                Cheating
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="type-2" name="type" type="radio" value="Criminal activity"{{ checked('type','Criminal activity') }}>
+                            <label class="govuk-label govuk-radios__label" for="type-2">
+                                Criminal activity
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="type-3" name="type" type="radio" value="Illegal lottery"{{ checked('type','Illegal lottery') }}>
+                            <label class="govuk-label govuk-radios__label" for="type-3">
+                                Illegal lottery
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="type-4" name="type" type="radio" value="Illegal machines"{{ checked('type','Cheating') }}>
+                            <label class="govuk-label govuk-radios__label" for="type-4">
+                                Illegal machines
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="type-5" name="type" type="radio" value="Money laundering"{{ checked('type','Money laundering') }}>
+                            <label class="govuk-label govuk-radios__label" for="type-5">
+                                Money laundering
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="type-6" name="type" type="radio" value="Problem gambling"{{ checked('type','Problem gambling') }}>
+                            <label class="govuk-label govuk-radios__label" for="type-6">
+                                Problem gambling
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="type-7" name="type" type="radio" value="Theft"{{ checked('type','Theft') }}>
+                            <label class="govuk-label govuk-radios__label" for="type-7">
+                                Theft
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="type-8" name="type" type="radio" value="Underage gambling"{{ checked('type','Underage gambling') }}>
+                                <label class="govuk-label govuk-radios__label" for="type-8">
+                                  Underage gambling
+                                </label>
+                              </div> 
+                              <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type-9" name="type" type="radio" value="Unlicensed gambling, poker or premises"{{ checked('type','Unlicensed gambling, poker or premises') }}>
+                                    <label class="govuk-label govuk-radios__label" for="type-9">
+                                      Unlicensed gambling, poker or premises
+                                    </label>
+                                  </div> 
+                                  <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="type-10" name="type" type="radio" value="Unlicensed online gambling"{{ checked('type','Unlicensed online gambling') }}>
+                                        <label class="govuk-label govuk-radios__label" for="type-10">
+                                          Unlicensed online gambling
+                                        </label>
+                                      </div> 
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="type-11" name="type" type="radio" value="Other"
+                                data-aria-controls="conditional-what-11" {{ checked('type','Other') }}>
+                            <label class="govuk-label govuk-radios__label" for="type-11">
+                                Other
+                            </label>
+                        </div>
 
-             
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-what-11">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-text">
+                                    Other reason
+                                </label>
+                                <input class="govuk-input" id="contact-by-text" name="othertype" type="text" value="{{data['othertype']}}">
+                            </div>
+                        </div>
+                    </div>
 
-              <div class="govuk-form-group">
-                  <a href="/user/page3" class="govuk-button">
+                </fieldset>
+            </div>
+            <div class="govuk-form-group">
+                <button type="submit" class="govuk-button">
                     Save and continue
-                  </a></div>
+                </button></div>
         </form>
 
 

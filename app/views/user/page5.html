@@ -1,7 +1,7 @@
 {% extends "layoutuser.html" %}
 
 {% block pageTitle %}
-When did this happen - Tell us something in confidence
+What do you want to tell us - Tell us something in confidence
 {% endblock %}
 
 {% block links %}
@@ -16,21 +16,20 @@ When did this happen - Tell us something in confidence
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <a href="/user/page3" class="govuk-back-link">Back</a>
-        <span class="govuk-caption-l">Step 4 of 7</span>
+        <a href="/user/page4" class="govuk-back-link">Back</a>
+        <span class="govuk-caption-l">Step 5 of 7</span>
         <h1 class="govuk-heading-l">
-            When did this happen?
+            What do you want to tell us?
         </h1>
-        <p class="govuk-body">If you do not know when this was you can give us approximate dates and times.</p>
-        <p class="govuk-body">You can also say if this is still ongoing.</p>
+        <p class="govuk-body">Tell us anything you think is relevant.</p>
         <form method="POST">
 
             <div class="govuk-form-group">
-                <label class="govuk-label" for="detailswhen">
+                <label class="govuk-label" for="detailswhat">
                     Details
                 </label>
               
-                <textarea class="govuk-textarea" id="detailswhen" name="detailswhen" rows="5" aria-describedby="details-hint">{{data['detailswhen']}}</textarea>
+                <textarea class="govuk-textarea" id="detailswhat" name="detailswhat" rows="10" aria-describedby="details-hint">{{data['detailswhat']}}</textarea>
             </div>
 
             <div class="govuk-form-group">

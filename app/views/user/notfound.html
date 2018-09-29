@@ -1,0 +1,65 @@
+{% extends "layoutuser.html" %}
+
+{% block pageTitle %}
+Retrieve a report - Report not found - Tell us something in confidence
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item">
+    <a class="govuk-header__link" href="/">
+        Home
+    </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="/user/retrieve" class="govuk-back-link">Back</a>
+        <h1 class="govuk-heading-l">
+            Retrieve a report
+        </h1>
+        <p class="govuk-body">Enter the reference and access code you recieved when you submitted your report online.</p>
+
+        <form method="POST">
+
+                <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                          There is a problem
+                        </h2>
+                        <div class="govuk-error-summary__body">
+                          <ul class="govuk-list govuk-error-summary__list">
+                            <li>
+                              No report found for those details
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label  govuk-!-width-one-half" for="ref">
+                    Reference
+                </label>
+                <input class="govuk-input  govuk-!-width-one-half" id="ref" name="ref" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label  govuk-!-width-one-half" for="code">
+                    Access code
+                </label>
+                <input class="govuk-input  govuk-!-width-one-half" id="code" name="code" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+                <button type="submit" class="govuk-button">
+                    Retrieve report
+                </button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}

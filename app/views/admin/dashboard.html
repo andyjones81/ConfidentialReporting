@@ -1,0 +1,75 @@
+{% extends "layoutadmin.html" %}
+
+{% block pageTitle %}
+Dashboard
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item">
+    <a class="govuk-header__link" href="/admin/dashboard">
+        Home
+    </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+            <ul class="govuk-list">
+                    <li>
+                      <a class="govuk-link" href="#">New reports</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link" href="#">In progress</a>
+                    </li>
+                    <li>
+                      <a class="govuk-link" href="#">Complete</a>
+                    </li>
+                  </ul>
+
+                  <form>
+                        <div class="govuk-form-group govuk-body govuk-!-margin-bottom-2">
+                            <label class="govuk-label" for="name">
+                                Search
+                            </label>
+                            <input class="govuk-input" id="name" name="name" type="text">
+            
+                        </div>
+                        <button type="submit" class="govuk-button">
+                            Seach
+                        </button>
+                    </form>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">New reports</h2>
+
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col">Applicant</th>
+                        <th class="govuk-table__header" scope="col">Type</th>
+                        <th class="govuk-table__header" scope="col">App Number</th>
+                        <th class="govuk-table__header" scope="col">Submitted</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                    {% for report in data.reports %}                  
+                    {% if report.status === 'New' %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            <a href="/apps/report/{{report.reportid}}">{{report.reportid}}</a>
+                        </td>
+                        <td class="govuk-table__cell ">{{report.type}}</td>
+                        <td class="govuk-table__cell ">{{report.sector}}</td>
+                        <td class="govuk-table__cell ">{{report.date | date("DD MMM YYYY")}}</td>    
+    
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+</div>
+
+{% endblock %}

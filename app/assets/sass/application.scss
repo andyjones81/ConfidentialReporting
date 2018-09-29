@@ -936,3 +936,16 @@ $govuk-global-styles: true;
   // @import url('https://fonts.googleapis.com/css?family=Oxygen:400,700');
   
   // *{font-family: 'Oxygen', sans-serif !important;}
+
+  .app-panel {
+    @include govuk-responsive-margin(9, 'bottom');
+    border: 5px solid govuk-colour('black');
+    padding: 2em;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .app-panel--success {
+    border-color: govuk-colour('light-green');
+  }
+  

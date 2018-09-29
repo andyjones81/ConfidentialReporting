@@ -1,43 +1,42 @@
 {% extends "layoutuser.html" %}
 
 {% block pageTitle %}
-Tell us something in confidence - Prototype
+Tell us where this is happening or has happened - Tell us something in confidence
 {% endblock %}
 
 {% block links %}
-<li class="govuk-header__navigation-item govuk-header__navigation-item--active">
-    <a class="govuk-header__link" href="/">
-        Home
-    </a>
-</li>
+<li class="govuk-header__navigation-item">
+        <a class="govuk-header__link" href="/">
+            Home
+        </a>
+    </li>
 
 {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-            <a href="/user/page2" class="govuk-back-link">Back</a>
-      <h1 class="govuk-heading-l">
-            What do you want to tell us?
-      </h1>
-      <p class="govuk-body">Tell us everything you know about the activity that is taking place. </p>
-     
-        <form action="" method="POST">
-            
+        <a href="/user/page2" class="govuk-back-link">Back</a>
+        <span class="govuk-caption-l">Step 3 of 7</span>
+        <h1 class="govuk-heading-l">
+            Tell us where this is happening or has happened
+        </h1>
+        <p class="govuk-body">If you do not know the location you can describe it.</p>
+        <p class="govuk-body">If the activity is happening online give us the website address if you know it.</p>
+        <form method="POST">
+
             <div class="govuk-form-group">
                 <label class="govuk-label" for="details">
-                  Details
+                    Details
                 </label>
-                <span id="details-hint" class="govuk-hint">
-                    Include the details of anything that you think is relevant.
-                </span>
                 <textarea class="govuk-textarea" id="details" name="details" rows="5" aria-describedby="details-hint">{{data['details']}}</textarea>
-              </div>
+            </div>
 
-              <div class="govuk-form-group">
-                    <a href="/user/page4" class="govuk-button">
-                      Save and continue
-                    </a></div>
+            <div class="govuk-form-group">
+                <button type="submit" class="govuk-button">
+                    Save and continue
+                </button>
+            </div>
         </form>
 
 

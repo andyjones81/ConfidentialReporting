@@ -1,0 +1,97 @@
+{% extends "layoutuser.html" %}
+
+{% block pageTitle %}
+Do you want to provide any contact details - Tell us something in confidence
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item">
+    <a class="govuk-header__link" href="/">
+        Home
+    </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="/user/page7" class="govuk-back-link">Back</a>
+
+        <h1 class="govuk-heading-l">
+            Do you want to provide any contact details?
+        </h1>
+
+        <p class="govuk-body">Select no if you want to report this anonymously.</p>
+
+        <p class="govuk-body">If you choose to provide contact details, we will only use these to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>ask for additional information if needed</li>
+            <li>provide an outcome if we are able to do so</li>
+        </ul>
+
+        <p class="govuk-body">We may not be able to provide details of an outcome, or action take in some cases.</p>
+
+        <form method="POST">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="how-contacted-conditional-1" name="how-contacted"
+                                type="radio" value="Yes" data-aria-controls="conditional-how-contacted-conditional-1" {{ checked('how-contacted','Yes') }}>
+                            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-name">
+                                    Name (optional)
+                                </label>
+                                <input class="govuk-input" id="contact-by-name" name="contact-by-name"
+                                    type="text" value="{{data['contact-by-name']}}">
+                            </div>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-email">
+                                    Email address (optional)
+                                </label>
+                                <input class="govuk-input" id="contact-by-email" name="contact-by-email"
+                                    type="email"value="{{data['contact-by-email']}}">
+                            </div>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-phone">
+                                    Phone number (optional)
+                                </label>
+                                <input class="govuk-input" id="contact-by-phone" name="contact-by-phone"
+                                    type="tel"value="{{data['contact-by-phone']}}">
+                            </div>
+
+
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted"
+                                type="radio" value="No" data-aria-controls="conditional-how-contacted-conditional-2">
+                            <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2"  {{ checked('how-contacted','Yes') }}>
+                                No
+                            </label>
+                        </div>
+
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+                <button type="submit" class="govuk-button">
+                    Save and continue
+                </button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}

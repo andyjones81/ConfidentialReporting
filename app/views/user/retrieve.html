@@ -1,0 +1,52 @@
+{% extends "layoutuser.html" %}
+
+{% block pageTitle %}
+Rerieve a report - Tell us something in confidence
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item">
+    <a class="govuk-header__link" href="/">
+        Home
+    </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a href="/user/index" class="govuk-back-link">Back</a>
+        <h1 class="govuk-heading-l">
+            Retrieve a previously submitted report
+        </h1>
+        <p class="govuk-body">Enter the reference and access code you recieved when you submitted your report online.</p>
+
+        <form method="POST">
+
+            <div class="govuk-form-group">
+                <label class="govuk-label  govuk-!-width-one-half" for="ref">
+                    Reference
+                </label>
+                <input class="govuk-input  govuk-!-width-one-half" id="ref" name="ref" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+                <label class="govuk-label  govuk-!-width-one-half" for="code">
+                    Access code
+                </label>
+                <input class="govuk-input  govuk-!-width-one-half" id="code" name="code" type="text">
+            </div>
+
+            <div class="govuk-form-group">
+                <button type="submit" class="govuk-button">
+                    Retrieve report
+                </button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock %}

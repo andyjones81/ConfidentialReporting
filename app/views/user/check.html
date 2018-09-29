@@ -1,7 +1,7 @@
 {% extends "layoutuser.html" %}
 
 {% block pageTitle %}
-Tell us something in confidence - Prototype
+Check before submitting - Tell us something in confidence
 {% endblock %}
 
 {% block links %}
@@ -15,79 +15,171 @@ Tell us something in confidence - Prototype
 {% block content %}
 
 <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-    
-            <h1 class="govuk-heading-l">
-                Check the details of your report
-            </h1>
-    <p class="govuk-body"></p>
-    
-    
-            <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
-            <!--   * `app-check-your-answers--short` for short questions -->
-            <!--   * `app-check-your-answers__questions-long` for long questions -->
-            <!--   * none for single group of q&a -->
-            <dl class="app-check-your-answers app-check-your-answers__questions-long">
-                <div class="app-check-your-answers__contents">
-                    <dt class="app-check-your-answers__question">
-                            Tell us what this relates to
-                    </dt>
-                    <dd class="app-check-your-answers__answer">
-                        Social media
-                    </dd>
-                    <dd class="app-check-your-answers__change">
-                            <a href="/users/page1">
-                            Change<span class="govuk-visually-hidden"> statement 1</span>
-                        </a>
-                    </dd>
-                </div>
-                <div class="app-check-your-answers__contents">
-                    <dt class="app-check-your-answers__question">
-                            Where is this happening
-                    </dt>
-                    <dd class="app-check-your-answers__answer">
-                        https://www.example.com/dodgylottery
-                    </dd>
-                    <dd class="app-check-your-answers__change">
-                            <a href="/users/page2">
-                            Change<span class="govuk-visually-hidden"> statement 1</span>
-                        </a>
-                    </dd>
-                </div>
-                <div class="app-check-your-answers__contents">
-                        <dt class="app-check-your-answers__question">
-                                What do you want to tell us?
-                        </dt>
-                        <dd class="app-check-your-answers__answer">
-                            There is a dodgy lottery being run on this social media platform and it's offering the winner a house if they bet on the bonus ball of the national lottery.
-                        </dd>
-                        <dd class="app-check-your-answers__change">
-                            <a href="/users/page3">
-                                Change<span class="govuk-visually-hidden"> statement 1</span>
-                            </a>
-                        </dd>
-                    </div>
-                   
-                       
-                            
-            </dl>
-    
-    
-    
-    
-            <h2 class="govuk-heading-m">Now submit your report</h2>
-    
-            <div class="govuk-form-group">
-            <a class="govuk-button" href="/user/complete" role="button">
-                Submit
-            </a>
-            </div>
+    <div class="govuk-grid-column-two-thirds">
 
-            <a href="/user/index">
-                I don't want to continue with this report submission
-            </a>
-    
-        </div>
+        <h1 class="govuk-heading-l">
+            Check before submitting
+        </h1>
+        <p class="govuk-body">You can check the details of your report before submitting.</p>
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    Area of gambling
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {{ data['what'] }}
+
+                    {% if data['what'] === 'Other' %}
+                    <br />{{ data['otherarea'] }}
+                    {% endif %}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="/user/page1">
+                        Change<span class="govuk-visually-hidden"> what area of gambling does this report relate to</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    Type of problem
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {{ data['type'] }}
+
+                    {% if data['what'] === 'Other' %}
+                    <br />{{ data['othertype'] }}
+                    {% endif %}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="/user/page2">
+                        Change<span class="govuk-visually-hidden"> what do you want to report</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    Location
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {{ data['details'] }}
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="/user/page3">
+                        Change<span class="govuk-visually-hidden"> tell us where this is happening or has happened</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    When
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {{ data['detailswhen'] }}
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="/user/page4">
+                        Change<span class="govuk-visually-hidden"> when did this happen</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    Details
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {{ data['detailswhat'] }}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="/user/page5">
+                        Change<span class="govuk-visually-hidden"> what do you want to tell us</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    Files
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    No files uploaded
+
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="/user/page6">
+                        Change<span class="govuk-visually-hidden"> files</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    Other bodies notified
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {% if data['detailsother'] === '' %}
+                    <br />No details provided
+                    {%else%}
+                    <br />{{data['detailsother']}}
+                    {% endif %}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="/user/page7">
+                        Change<span class="govuk-visually-hidden"> other bodies notified</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                    Contact
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {% if data['how-contacted'] === 'Yes' %}
+                    {{data['how-contacted']}}
+
+                    {% if data['contact-by-name'] != '' %}
+                    <br />Name: {{data['contact-by-name']}}
+                    {% endif %}
+
+                    {% if data['contact-by-email'] != '' %}
+                    <br />Email: {{data['contact-by-email']}}
+                    {% endif %}
+
+                    {% if data['contact-by-phone'] != '' %}
+                    <br />Phone: {{data['contact-by-phone']}}
+                    {% endif %}
+
+
+                    {%else%}
+                    {{data['how-contacted']}}
+                    {% endif %}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                    <a href="/user/page8">
+                        Change<span class="govuk-visually-hidden"> do you want to provide any contact details</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+
+
+
+
+        <h2 class="govuk-heading-m">Now send your report</h2>
+        <p class="govuk-body">By submitting this report you are confirming that, to the best of your knowledge, the
+            details you are providing are correct. </p>
+        <form method="POST">
+            <div class="govuk-form-group">
+                <button class="govuk-button" type="submit">
+                    Accept and send report
+                </button>
+            </div>
+        </form>
+        <a href="/user/index">
+            I don't want to continue with this report
+        </a>
+
     </div>
+</div>
 
 {% endblock %}
