@@ -9,5 +9,48 @@
     "otherBodies": "",
     "contact": "No",
     "date": "2018-09-18T18:25:43.511Z",
-    "status": "New"
+    "status": "New",
+    "assigndTo": ""
+},
+{
+    "reportid": "82H62FF4",
+    "sector": "Betting",
+    "type": "Underage gambling ",
+    "location": "In the KIngs Arms pub on a Friday night",
+    "when": "Ongoing",
+    "details": "Kids are gambling on a friday night on the footy.",
+    "files": "No files uploaded",
+    "otherBodies": "",
+    "contact": "No",
+    "date": "2018-09-18T18:25:43.511Z",
+    "status": "InProgress",
+    "assignedTo": "Nick Oliver"
+},
+{
+    "reportid": "GDJ82JD2",
+    "sector": "Casinos",
+    "type": "Money laundering",
+    "location": "The bag casino on the retail park is a hotbed of crime",
+    "when": "Ongoing",
+    "details": "Crooks use it to spend their crim cash",
+    "files": "No files uploaded",
+    "otherBodies": "",
+    "contact": "No",
+    "date": "2018-09-18T18:25:43.511Z",
+    "status": "New",
+    "assignedTo": ""
+},
+{
+    "reportid": "92KSBS62",
+    "sector": "Bingo",
+    "type": "Unlicensed gambling, poker or premises",
+    "location": "Old Ladies Club, New Street, Bimringham",
+    "when": "Ongoing",
+    "details": "The old ladies club is not licensed for bingo",
+    "files": "No files uploaded",
+    "otherBodies": "",
+    "contact": "No",
+    "date": "2018-09-18T18:25:43.511Z",
+    "status": "Complete",
+    "assignedTo": "Becky Muirhead"
 }]}

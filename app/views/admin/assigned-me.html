@@ -19,7 +19,7 @@ Dashboard
 {% endblock %}
 {% block content %}
 
-<div class="navigation-service">
+ <div class="navigation-service">
     <div class="navigation-service-name">
         Nick Oliver
     </div>
@@ -31,7 +31,7 @@ Dashboard
         {% include "includes/admin-menu.html" ignore missing %}
     </div>
     <div class="govuk-grid-column-three-quarters">
-        <h2 class="govuk-heading-m">New reports</h2>
+        <h2 class="govuk-heading-m">Assigned to me</h2>
 
         <table class="govuk-table">
             <thead class="govuk-table__head">
@@ -44,7 +44,7 @@ Dashboard
             </thead>
             <tbody class="govuk-table__body">
                 {% for report in data.reports %}                  
-                {% if report.status === 'New' %}
+                {% if report.assignedTo === 'Nick Oliver' and report.status != 'Complete'%}
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell govuk-body-s">
                         <a href="/apps/report/{{report.reportid}}">{{report.reportid}}</a>

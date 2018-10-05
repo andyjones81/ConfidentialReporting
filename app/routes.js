@@ -117,10 +117,34 @@ router.post('/user/notfound', function (req, res) {
 
 router.get('/admin/dashboard', (req, res) => {
     var data = require('./data/data.json')
-  
+   
     res.render('admin/dashboard', {
       data
     })
   })
+
+  router.get('/admin/assigned-me', (req, res) => {
+      var data = require('./data/data.json')
+     
+      res.render('admin/assigned-me', {
+        data
+      })
+    })
+
+    router.get('/admin/in-progress', (req, res) => {
+        var data = require('./data/data.json')
+       
+        res.render('admin/in-progress', {
+          data
+        })
+      })
+
+      router.get('/admin/complete', (req, res) => {
+          var data = require('./data/data.json')
+         
+          res.render('admin/complete', {
+            data
+          })
+        })
 
 module.exports = router
