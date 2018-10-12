@@ -19,7 +19,7 @@ router.post('/user/page2', function (req, res) {
     if (req.session.data['cya'] === 1) {
         res.redirect('/user/check')
     } else {
-        res.redirect('/user/page3')
+        res.redirect('/user/page5')
     }
 
 });
@@ -35,7 +35,7 @@ router.post('/user/page4', function (req, res) {
     if (req.session.data['cya'] === 1) {
         res.redirect('/user/check')
     } else {
-        res.redirect('/user/page5')
+        res.redirect('/user/page6')
     }
 
 });
@@ -43,7 +43,7 @@ router.post('/user/page5', function (req, res) {
     if (req.session.data['cya'] === 1) {
         res.redirect('/user/check')
     } else {
-        res.redirect('/user/page6')
+        res.redirect('/user/page3')
     }
 
 });
