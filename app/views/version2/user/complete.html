@@ -1,0 +1,39 @@
+{% extends "layoutuser.html" %}
+
+{% block pageTitle %}
+Complete - Tell us something anonymously
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+  <a class="govuk-header__link" href="/version2/user/index">
+    Home
+  </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="app-panel app-panel--success">
+        <h1 class="govuk-heading-l">We've received your report</h1>     
+     
+      </div>      
+   
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">We review all submissions and will take action where necessary.</p>
+
+    <p>Return to the start of <a href="/version2/user/index">Tell us something anonymously</a></p>
+
+    <p>Go to the <a href="http://www.gamblingcommission.gov.uk">Gambling Commission homepage</a></p>
+
+    <h2 class="govuk-heading-m">Other places to get help or information</h2>
+    <h2 class="govuk-heading-s">GamCare</h2>
+    <p>GamCare is the leading national provider of information, advice, support and free treatment for anyone affected by problem gambling. <a href="https://www.gamcare.org.uk/" target="_blank">https://www.gamcare.org.uk</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

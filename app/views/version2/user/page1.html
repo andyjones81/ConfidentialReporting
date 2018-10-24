@@ -1,0 +1,79 @@
+{% extends "layoutuser.html" %}
+
+{% block pageTitle %}
+What area of gambling does this report relate to - Tell us something anonymously
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item">
+    <a class="govuk-header__link" href="/">
+        Home
+    </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a href="/version2/user/" class="govuk-back-link">Back</a>
+
+    <span class="govuk-caption-l">Confidential reporting</span>
+    <h1 class="govuk-heading-l">
+      What area of gambling does this report relate to?
+    </h1>
+
+    <form  method="POST">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+
+          <div class="govuk-checkboxes govuk-checkboxes--conditional" data-module="checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="what-1" name="what" type="checkbox" value="Online gambling" {{ checked('what','Online gambling') }}>
+              <label class="govuk-label govuk-checkboxes__label" for="what-1">
+                Online gambling/betting
+              </label>
+              <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                including betting sites and social media such as facebook and twitter
+              </span>
+      
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="what-2" name="what" type="checkbox" value="Betting shops" {{ checked('what','Betting shops') }}>
+              <label class="govuk-label govuk-checkboxes__label" for="what-2">
+                Betting shops, casinos or other premises
+              </label>
+              <span id="nationality-1-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                including bars and pubs
+              </span>
+            </div>          
+           
+            <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="what-7" name="what" type="checkbox" value="Other" data-aria-controls="conditional-what-7" {{ checked('what','Other') }}>
+            <label class="govuk-label govuk-checkboxes__label" for="what-7">
+              Other
+            </label>
+          </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-what-7">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-text">
+                Other area of gambling
+              </label>
+              <input class="govuk-input" id="contact-by-text" name="otherarea" type="text" value="{{data['otherarea']}}">
+            </div>
+          </div>
+          </div>
+         
+        </fieldset>
+      </div>
+      <div class="govuk-form-group">
+          <button type="submit" class="govuk-button">
+              Save and continue
+          </button></div>
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

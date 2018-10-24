@@ -1,27 +1,32 @@
 {% extends "layoutuser.html" %}
 
 {% block pageTitle %}
-What do you want to tell us - Tell us something anonymously
+Tell us where this is happening or has happened - Tell us something anonymously
 {% endblock %}
 
 {% block links %}
 <li class="govuk-header__navigation-item">
-    <a class="govuk-header__link" href="/">
-        Home
-    </a>
-</li>
+        <a class="govuk-header__link" href="/">
+            Home
+        </a>
+    </li>
 
 {% endblock %}
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <a href="/user/page2" class="govuk-back-link">Back</a>
-        <span class="govuk-caption-l">Step 3 of 7</span>
+        <a href="/version2/user/page1" class="govuk-back-link">Back</a>
+        <span class="govuk-caption-l">Confidential reporting</span>
         <h1 class="govuk-heading-l">
             What do you want to tell us?
         </h1>
-        <p class="govuk-body">Tell us anything you think is relevant.</p>
+        <p class="govuk-body"> Include details about:
+                <ul class="govuk-list govuk-list--bullet">
+                        <li>what you've seen or know</li>
+                        <li>details about when and where this happening</li>
+                        <li>links to any websites involved</li>
+                      </ul>
         <form method="POST">
 
             <div class="govuk-form-group">
@@ -31,6 +36,8 @@ What do you want to tell us - Tell us something anonymously
               
                 <textarea class="govuk-textarea" id="detailswhat" name="detailswhat" rows="10" aria-describedby="details-hint">{{data['detailswhat']}}</textarea>
             </div>
+
+
 
             <div class="govuk-form-group">
                 <button type="submit" class="govuk-button">

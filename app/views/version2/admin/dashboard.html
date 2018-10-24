@@ -1,0 +1,64 @@
+{% extends "layoutadmin.html" %}
+
+{% block pageTitle %}
+Dashboard
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item">
+    <a class="govuk-header__link" href="/admin/dashboard">
+        Home
+    </a>
+</li>
+<li class="govuk-header__navigation-item">
+    <a class="govuk-header__link" href="/admin/add">
+        Add report
+    </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="navigation-service">
+    <div class="navigation-service-name">
+        Nick Oliver
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        {% include "includes/admin-menu.html" ignore missing %}
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h2 class="govuk-heading-m">New reports</h2>
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header govuk-body-s" scope="col">Reference</th>
+                    <th class="govuk-table__header govuk-body-s" scope="col">Sector</th>
+                    <th class="govuk-table__header govuk-body-s" scope="col">Type</th>
+                    <th class="govuk-table__header govuk-body-s" scope="col">Submitted</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                {% for report in data.reports %}                  
+                {% if report.status === 'New' %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell govuk-body-s">
+                        <a href="/apps/report/{{report.reportid}}">{{report.reportid}}</a>
+                    </td>
+                    <td class="govuk-table__cell govuk-body-s">{{report.type}}</td>
+                    <td class="govuk-table__cell  govuk-body-s">{{report.sector}}</td>
+                    <td class="govuk-table__cell  govuk-body-s">{{report.date | date("DD MMM YYYY")}}</td>  
+
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

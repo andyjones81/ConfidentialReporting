@@ -1,0 +1,74 @@
+{% extends "layoutuser.html" %}
+
+{% block pageTitle %}
+Start - Tell us something anonymously
+{% endblock %}
+
+{% block links %}
+<li class="govuk-header__navigation-item govuk-header__navigation-item--active">
+    <a class="govuk-header__link" href="/">
+        Home
+    </a>
+</li>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            Tell us something anonymously
+        </h1>
+
+        <p class="govuk-body">Use this service to report criminal or suspicious activity such as:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>illegal or suspicious gambling activity</li>
+            <li>underage gambling</li>
+            <li>gambling related money laundering</li>
+        </ul>
+
+        <p class="govuk-body">Do not report complaints about operators using this service. They should be directed to
+            the operator the complaint is about. You can use our <a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search"
+                target="_blank">public register</a> to find details of operatos we licence.</p>
+
+
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Call 101 or 999 if someones life or property is in danger.
+            </strong>
+        </div>
+
+        <p class="govuk-body">Reports submitted through this service are completely anonymous. We will not ask you for any personal information while using this service.</p>
+
+        <a href="/version2/user/page1" role="button" class="govuk-button govuk-button--start">
+            Start now
+        </a>
+
+
+        <h2 class="govuk-heading-m">
+            Other ways to report something anonymously
+        </h2>
+        <p class="govuk-body">You can also call our confidential reporting line.</p>
+        <p class="govuk-body">Telephone: 0121 230 6655 </p>
+
+        <h3 class="govuk-heading-m">
+            Crimestoppers
+        </h3>
+
+        <p class="govuk-body">We work in partnership with the charity Crimestoppers as part of an ongoing strategy to
+            protect against match-fixing, money laundering and illegal gambling.</p>
+
+        <p class="govuk-body">Crimestoppers will pass on reports made to them about gambling-related criminality or
+            corruption to our Sports Betting Intelligence Unit (SBIU) at the same time as they are reported to the
+            police. </p>
+
+        <p class="govuk-body">You can call Crimestoppers on 0800 555 111 or visit their website at <a href="https://crimestoppers-uk.org"
+                target="_Blank">https://crimestoppers-uk.org/</a></p>
+    </div>
+</div>
+
+{% endblock %}

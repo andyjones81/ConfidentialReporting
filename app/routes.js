@@ -7,107 +7,107 @@ router.get('/user/index', function (req, res) {
     res.render('user/index')
 })
 
-router.post('/user/page1', function (req, res) {
+router.post('/version1/user/page1', function (req, res) {
     if (req.session.data['cya'] === 1) {
-        res.redirect('/user/check')
+        res.redirect('/version1/user/check')
     } else {
-        res.redirect('/user/page2')
+        res.redirect('/version1/user/page2')
     }
 
 });
-router.post('/user/page2', function (req, res) {
+router.post('/version1/user/page2', function (req, res) {
     if (req.session.data['cya'] === 1) {
-        res.redirect('/user/check')
+        res.redirect('/version1/user/check')
     } else {
-        res.redirect('/user/page5')
+        res.redirect('/version1/user/page5')
     }
 
 });
-router.post('/user/page3', function (req, res) {
+router.post('/version1/user/page3', function (req, res) {
     if (req.session.data['cya'] === 1) {
-        res.redirect('/user/check')
+        res.redirect('/version1/user/check')
     } else {
-        res.redirect('/user/page4')
+        res.redirect('/version1/user/page4')
     }
 
 });
-router.post('/user/page4', function (req, res) {
+router.post('/version1/user/page4', function (req, res) {
     if (req.session.data['cya'] === 1) {
-        res.redirect('/user/check')
+        res.redirect('/version1/user/check')
     } else {
-        res.redirect('/user/page6')
+        res.redirect('/version1/user/page6')
     }
 
 });
-router.post('/user/page5', function (req, res) {
+router.post('/version1/user/page5', function (req, res) {
     if (req.session.data['cya'] === 1) {
-        res.redirect('/user/check')
+        res.redirect('/version1/user/check')
     } else {
-        res.redirect('/user/page3')
+        res.redirect('/version1/user/page3')
     }
 
 });
-router.post('/user/page6', function (req, res) {
+router.post('/version1/user/page6', function (req, res) {
     if (req.session.data['cya'] === 1) {
-        res.redirect('/user/check')
+        res.redirect('/version1/user/check')
     } else {
-        res.redirect('/user/page7')
+        res.redirect('/version1/user/page7')
     }
 
 });
-router.post('/user/page6a', function (req, res) {
-    res.redirect('/user/page6b')
+router.post('/version1/user/page6a', function (req, res) {
+    res.redirect('/version1/user/page6b')
 
 });
-router.post('/user/page6b', function (req, res) {
+router.post('/version1/user/page6b', function (req, res) {
     if (req.session.data['cya'] === 1) {
-        res.redirect('/user/check')
+        res.redirect('/version1/user/check')
     } else {
-        res.redirect('/user/page7')
+        res.redirect('/version1/user/page7')
     }
 
 });
-router.post('/user/page7', function (req, res) {
+router.post('/version1/user/page7', function (req, res) {
     if (req.session.data['cya'] === 1) {
-        res.redirect('/user/check')
+        res.redirect('/version1/user/check')
     } else {
-        res.redirect('/user/page8')
+        res.redirect('/version1/user/page8')
     }
 
 });
-router.post('/user/page8', function (req, res) {
-    res.redirect('/user/check')
+router.post('/version1/user/page8', function (req, res) {
+    res.redirect('/version1/user/check')
 });
 
-router.get('/user/check', function (req, res) {
+router.get('/version1/user/check', function (req, res) {
     req.session.data['cya'] = 1
     res.render('user/check')
 });
 
-router.post('/user/check', function (req, res) {
-    res.redirect('/user/complete')
+router.post('/version1/user/check', function (req, res) {
+    res.redirect('/version1/user/complete')
 });
 
 
 
-router.get('/user/check', function (req, res) {
+router.get('/version1/user/check', function (req, res) {
     req.session.data['cya'] = 1
     res.render('user/check')
 });
 
-router.post('/user/retrieve', function (req, res) {
+router.post('/version1/user/retrieve', function (req, res) {
     if (req.session.data['ref'] === '973HG2ID' && req.session.data['code'] === '87F34VD2') {
-        res.redirect('/user/report')
+        res.redirect('/version1/user/report')
     } else {
-        res.redirect('/user/notfound')
+        res.redirect('/version1/user/notfound')
     }
 });
 
-router.post('/user/notfound', function (req, res) {
+router.post('/version1/user/notfound', function (req, res) {
     if (req.session.data['ref'] === '973HG2ID' && req.session.data['code'] === '87F34VD2') {
-        res.redirect('/user/report')
+        res.redirect('/version1/user/report')
     } else {
-        res.redirect('/user/notfound')
+        res.redirect('/version1/user/notfound')
     }
 });
 
