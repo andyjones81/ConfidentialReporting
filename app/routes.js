@@ -81,7 +81,7 @@ router.post('/version1/user/page8', function (req, res) {
 
 router.get('/version1/user/check', function (req, res) {
     req.session.data['cya'] = 1
-    res.render('user/check')
+    res.render('version1/user/check')
 });
 
 router.post('/version1/user/check', function (req, res) {
