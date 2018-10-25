@@ -3,7 +3,7 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 router.get('/user/index', function (req, res) {
-    req.session.destroy
+    req.session.destroy()
     res.render('user/index')
 })
 

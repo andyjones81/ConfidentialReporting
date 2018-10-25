@@ -4,12 +4,12 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 router.get('/', function (req, res) {
-    req.session.destroy
+    req.session.destroy()
     res.redirect('index')
 })
 
 router.get('/version2/user/index', function (req, res) {
-    req.session.destroy
+    req.session.destroy()
     res.render('version2/user/index')
 })
 
