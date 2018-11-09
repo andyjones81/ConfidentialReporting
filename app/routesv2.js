@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/', function (req, res) {
     req.session.destroy()
-    res.redirect('index')
+    res.redirect('/version2/user/index')
 })
 
 router.get('/version2/user/index', function (req, res) {
@@ -66,6 +66,23 @@ router.get('/version2/user/check', function (req, res) {
 });
 
 router.post('/version2/user/check', function (req, res) {
+
+        
+  var NotifyClient = require('notifications-node-client').NotifyClient,
+  notifyClient = new NotifyClient(process.env.NotifyAPIKey);
+  var personalisation={
+    'what': req.session.data['what'],
+    'detail': req.session.data['detailswhat'],
+    'who': req.session.data['detailsother']    
+}
+  notifyClient
+    .sendEmail(process.env.TemplateId, 'ajones@gamblingcommission.gov.uk', {
+      personalisation: personalisation})
+  .then(response => console.log(response))
+  .catch(err => console.error(err))
+;
+         
+
     res.redirect('/version2/user/complete')
 });
 
@@ -96,7 +113,8 @@ router.get('/admin/dashboard', (req, res) => {
 
       router.get('/admin/complete', (req, res) => {
           var data = require('./data/data.json')
-         
+
+      
           res.render('admin/complete', {
             data
           })
