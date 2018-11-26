@@ -945,7 +945,7 @@ $govuk-global-styles: true;
     @include govuk-responsive-margin(9, 'bottom');
     border: 5px solid govuk-colour('black');
     padding: 2em;
-    text-align: center;
+    text-align: left;
     width: 100%;
   }
   
